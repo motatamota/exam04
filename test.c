@@ -45,6 +45,7 @@ int	myexec(char **av, int i, char **env)
 		pipe_set(ispipe, fd, 1);
 		if (!strcmp(*av, "cd"))
 			exit(mycd(av, i));
+		printf("%s\n", *av);
 		execve(*av, av, env);
 		puterr("cant exec\n");
 		exit(1);
